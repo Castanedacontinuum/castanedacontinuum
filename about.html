@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Castaneda Continuum</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Sylfaen&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: 'Sylfaen', serif;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Fixed image layer */
+        .photo-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/about/about.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top center;
+            z-index: -1;
+        }
+
+        /* Scroll layer */
+        .scroll-content {
+            margin-top: 80vh;
+            padding-bottom: 200px;
+        }
+
+        /* Lambda navigation — FIXED */
+        .nav {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            font-size: 3.2em;
+            z-index: 10;
+            text-shadow: 
+                0 0 22px rgba(0,0,0,0.75),
+                0 0 8px rgba(0,0,0,0.9);
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 0.06em;
+        }
+
+        /* Title */
+        .creator-title {
+            font-size: 3.2em;
+            margin-top: 120px; /* extra ruimte omdat Λ nu fixed is */
+            margin-bottom: 20px;
+        }
+
+        /* Canon block (first 4 lines) */
+        .canon-core {
+            font-size: 1.5em;
+            line-height: 1.7;
+            white-space: pre-line;
+            margin-bottom: 50px;
+        }
+
+        /* Secondary text */
+        .canon-secondary {
+            font-size: 1.1em;
+            line-height: 1.6;
+            white-space: pre-line;
+            margin-top: 20px;
+        }
+
+        /* Invisible SEO name */
+        .seo-name {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="photo-fixed"></div>
+
+    <!-- Invisible SEO reference -->
+    <div class="seo-name">Steven Woestenborghs</div>
+
+    <!-- FIXED Lambda navigation -->
+    <div class="nav">
+        <a href="inner.html">Λ</a>
+    </div>
+
+    <!-- Scrollable content -->
+    <div class="scroll-content">
+
+        <!-- Title -->
+        <div class="creator-title">THE CREATOR</div>
+
+        <!-- Canon core (4 lines) -->
+        <div class="canon-core">
+First observer of the Continuum
+Opens layers and exposes structure
+Names what appears
+Sustainer of the four domains
+        </div>
+
+        <!-- Secondary text -->
+        <div class="canon-secondary">
+Each work originates from a documented encounter within the Continuum
+Visitors enter at their own layer
+
+Works from the Continuum and other still hidden items are available for acquisition
+Inquiries via: <a href="mailto:info@castanedacontinuum.com" style="color:white; text-decoration:none;">info@castanedacontinuum.com</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

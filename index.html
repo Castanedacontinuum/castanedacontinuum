@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Castaneda Continuum</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+<style>
+/* Sylfaen font – lokaal */
+@font-face {
+    font-family: 'Sylfaen';
+    src: url('fonts/Sylfaen.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #000;
+    color: #f5f5f5;
+    font-family: 'Sylfaen', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Onzichtbare naamverwijzing */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* Fade-in van de portal */
+.portal {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Titel */
+.title {
+    font-size: 2rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Totem */
+.totem {
+    display: inline-block;
+    text-align: left;
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.25;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+}
+
+/* Slang */
+.symbol {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 55vw;
+    height: auto;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.12));
+    opacity: 0;
+    animation: fadeInSymbol 3s ease-out forwards;
+    cursor: pointer;
+
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: auto;
+}
+
+@keyframes fadeInSymbol {
+    0% { opacity: 0; transform: scale(0.97); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.symbol:hover {
+    filter: drop-shadow(0 0 22px rgba(255, 255, 255, 0.35));
+    transform: scale(1.02);
+    transition: 0.25s ease-out;
+}
+
+/* Fade to black bij click */
+#fadeout {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s ease-out;
+}
+</style>
+
+</head>
+
+<body>
+
+<span class="visually-hidden">Steven Woestenborghs</span>
+
+<div id="fadeout"></div>
+
+<div class="portal">
+
+    <div class="title">CASTANEDA CONTINUUM</div>
+
+    <div class="totem">
+        PERCEPTION<br>
+        /SHIFTED<br>
+        //PERCEPTION
+    </div>
+
+    <img src="images/bondgenootgate.png" alt="De Slang" class="symbol"
+         oncontextmenu="return false;"
+         ondragstart="return false;"
+         onclick="startTransition()">
+
+</div>
+
+<script>
+function startTransition() {
+    const f = document.getElementById("fadeout");
+    f.style.pointerEvents = "auto";
+    f.style.opacity = "1";
+
+    setTimeout(() => {
+        window.location.href = "inner.html";
+    }, 1200);
+}
+</script>
+
+</body>
+</html>
